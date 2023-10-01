@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://b0t5rlvduehdv"]
+[gd_scene load_steps=4 format=3 uid="uid://b0t5rlvduehdv"]
+
+[ext_resource type="PackedScene" uid="uid://cpes4j7i1a0ao" path="res://background.tscn" id="1_cev2o"]
+
+[sub_resource type="Theme" id="Theme_7jl5p"]
+
+[sub_resource type="SystemFont" id="SystemFont_2j58o"]
+font_names = PackedStringArray("Monospace")
+font_italic = true
 
 [node name="Menu" type="Node2D"]
+
+[node name="BG" parent="." instance=ExtResource("1_cev2o")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 1, 1)
+offset_left = 123.0
+offset_top = 80.0
+offset_right = 346.0
+offset_bottom = 220.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_7jl5p")
+theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
+bbcode_enabled = true
+text = "
+[wave amp=50 freq=6]woodpeckers migrate too"
+fit_content = true
+tab_size = 24
