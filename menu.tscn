@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0t5rlvduehdv"]
+[gd_scene load_steps=6 format=3 uid="uid://b0t5rlvduehdv"]
 
 [ext_resource type="PackedScene" uid="uid://cpes4j7i1a0ao" path="res://background.tscn" id="1_cev2o"]
+[ext_resource type="Script" path="res://menu.gd" id="1_k4ths"]
+[ext_resource type="Script" path="res://Title.gd" id="3_wr8vr"]
 
 [sub_resource type="Theme" id="Theme_7jl5p"]
 
@@ -9,22 +11,41 @@ font_names = PackedStringArray("Monospace")
 font_italic = true
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_k4ths")
 
 [node name="BG" parent="." instance=ExtResource("1_cev2o")]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="."]
 modulate = Color(0, 0, 1, 1)
 offset_left = 123.0
 offset_top = 80.0
-offset_right = 346.0
-offset_bottom = 220.0
-scale = Vector2(3, 3)
+offset_right = 370.0
+offset_bottom = 143.0
+scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_7jl5p")
 theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
 bbcode_enabled = true
-text = "
-[wave amp=50 freq=6]woodpeckers migrate too"
 fit_content = true
 tab_size = 24
+script = ExtResource("3_wr8vr")
+
+[node name="Play" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 123.0
+offset_top = 411.0
+offset_right = 297.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 33
+text = "play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 126.0
+offset_top = 536.0
+offset_right = 362.0
+offset_bottom = 607.0
+text = "X"
+
+[connection signal="mouse_entered" from="Title" to="Title" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Title" to="Title" method="_on_mouse_exited"]

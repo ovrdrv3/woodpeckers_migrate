@@ -1,7 +1,10 @@
+Polygon2D
+Button
+BoxContainer
+VBoxContainer
 ParallaxBackground
 ParallaxLayer
 Control
 TextEdit
 RichTextLabel
 Sprite2D
-Polygon2D

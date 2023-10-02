@@ -3,3 +3,6 @@ res://background.tscn
 res://ParallaxLayer.gd
 res://ParallaxBackground.gd
 res://background.gd
+res://menu.gd
+res://world.tscn
+res://Title.gd

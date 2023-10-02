@@ -1,2 +1,31 @@
 cloud_bg.png.import
 cloud_bg.xcf
+
+# Mono/C# related
+/.mono/
+*.sln
+*.userprefs
+*.suo
+*.tmp
+*.user
+*.sublime*
+*.dbmdl
+*.dbproj
+*.bak
+*.swp
+*.swo
+*.dll
+*.pdb
+*.mdb
+*.ldf
+*.mdf
+
+# Godot related
+.import/
+export.cfg
+export_presets.cfg
+
+# OS generated
+.DS_Store
+Thumbs.db
+Desktop.ini
