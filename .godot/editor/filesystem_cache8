@@ -1,5 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696196379
+::res://::1696401859
+background.gd::GDScript::-1::1696198713::0::1::::<>ParallaxBackground<>::
+background.tscn::PackedScene::5835076749408114962::1696199022::0::1::::<><>::res://background.gd<>uid://dneofh8fey7r::::res://cloud_bg.png
 cloud_bg.png::CompressedTexture2D::237671585739227009::1696196379::1696196393::1::::<><>::
 icon.svg::CompressedTexture2D::1266804370763899289::1696192318::1696192321::1::::<><>::
-menu.tscn::PackedScene::4182217430611366295::1696194440::0::1::::<><>::
+menu.gd::GDScript::-1::1696222058::0::1::::<>Node2D<>::
+menu.tscn::PackedScene::4182217430611366295::1696261765::0::1::::<><>::uid://cpes4j7i1a0ao::::res://background.tscn<>res://menu.gd<>res://Title.gd
+ParallaxBackground.gd::GDScript::-1::1696198522::0::1::::<>ParallaxBackground<>::
+ParallaxLayer.gd::GDScript::-1::1696198468::0::1::::<>ParallaxBackground<>::
+Title.gd::GDScript::-1::1696261626::0::1::::<>RichTextLabel<>::
+world.tscn::PackedScene::139848340822417075::1696261765::0::1::::<><>::

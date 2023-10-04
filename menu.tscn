@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0t5rlvduehdv"]
+[gd_scene load_steps=7 format=3 uid="uid://b0t5rlvduehdv"]
 
 [ext_resource type="PackedScene" uid="uid://cpes4j7i1a0ao" path="res://background.tscn" id="1_cev2o"]
 [ext_resource type="Script" path="res://menu.gd" id="1_k4ths"]
-[ext_resource type="Script" path="res://Title.gd" id="3_wr8vr"]
+[ext_resource type="Script" path="res://play_button.gd" id="3_kvduo"]
 
 [sub_resource type="Theme" id="Theme_7jl5p"]
 
 [sub_resource type="SystemFont" id="SystemFont_2j58o"]
 font_names = PackedStringArray("Monospace")
 font_italic = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny7oj"]
+size = Vector2(290.5, 192)
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_k4ths")
@@ -17,35 +20,107 @@ script = ExtResource("1_k4ths")
 
 [node name="Title" type="RichTextLabel" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 123.0
+offset_left = 50.0
 offset_top = 80.0
-offset_right = 370.0
-offset_bottom = 143.0
+offset_right = 297.0
+offset_bottom = 182.0
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_7jl5p")
 theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
 bbcode_enabled = true
+text = "
+[wave amp=200 freq=0.5]woodpeckers migrate[/wave]"
 fit_content = true
 tab_size = 24
-script = ExtResource("3_wr8vr")
 
-[node name="Play" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = 123.0
-offset_top = 411.0
-offset_right = 297.0
-offset_bottom = 470.0
-theme_override_font_sizes/font_size = 33
-text = "play"
+[node name="Play Button" type="Area2D" parent="."]
+script = ExtResource("3_kvduo")
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 126.0
-offset_top = 536.0
-offset_right = 362.0
-offset_bottom = 607.0
-text = "X"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play Button"]
+position = Vector2(142.75, 616)
+shape = SubResource("RectangleShape2D_ny7oj")
 
-[connection signal="mouse_entered" from="Title" to="Title" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Title" to="Title" method="_on_mouse_exited"]
+[node name="play" type="RichTextLabel" parent="Play Button"]
+modulate = Color(0, 0, 1, 1)
+offset_left = 50.0
+offset_top = 500.0
+offset_right = 95.0
+offset_bottom = 545.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_7jl5p")
+theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
+bbcode_enabled = true
+text = "
+[wave amp=50 freq=0.5]play[/wave]"
+fit_content = true
+tab_size = 24
+
+[node name="MarginContainer" type="MarginContainer" parent="Play Button/play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 500.0
+offset_right = -0.00500107
+offset_bottom = 500.985
+mouse_default_cursor_shape = 2
+
+[node name="play_bold" type="RichTextLabel" parent="Play Button"]
+modulate = Color(0, 0, 1, 1)
+offset_left = 50.0
+offset_top = 500.0
+offset_right = 95.0
+offset_bottom = 545.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_7jl5p")
+theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "
+[b][wave amp=50 freq=0.5]play[/wave][/b]"
+fit_content = true
+tab_size = 24
+
+[node name="MarginContainer" type="MarginContainer" parent="Play Button/play_bold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.00500262
+offset_bottom = 0.984998
+mouse_default_cursor_shape = 2
+
+[node name="quit" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 1, 1)
+offset_left = 50.0
+offset_top = 873.0
+offset_right = 95.0
+offset_bottom = 918.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_7jl5p")
+theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
+bbcode_enabled = true
+text = "
+[wave amp=50 freq=0.5]quit[/wave]"
+fit_content = true
+tab_size = 24
+
+[node name="MarginContainer" type="MarginContainer" parent="quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.00500262
+offset_bottom = 0.264999
+mouse_default_cursor_shape = 2
+
+[connection signal="mouse_entered" from="Play Button" to="Play Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Play Button" to="Play Button" method="_on_mouse_exited"]
