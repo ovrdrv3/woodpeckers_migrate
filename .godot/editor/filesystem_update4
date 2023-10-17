@@ -1,3 +1,5 @@
 res://menu.tscn
 res://play_button.gd
 res://quit_button.gd
+res://menu.gd
+res://world.tscn

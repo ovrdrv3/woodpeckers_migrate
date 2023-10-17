@@ -15,11 +15,3 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_play_button_up():
-	pass # Replace with function body.
-
-
-func _on_title_mouse_entered():
-	pass # Replace with function body.
-	
