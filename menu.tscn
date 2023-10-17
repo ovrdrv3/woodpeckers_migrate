@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0t5rlvduehdv"]
+[gd_scene load_steps=8 format=3 uid="uid://b0t5rlvduehdv"]
 
 [ext_resource type="PackedScene" uid="uid://cpes4j7i1a0ao" path="res://background.tscn" id="1_cev2o"]
 [ext_resource type="Script" path="res://menu.gd" id="1_k4ths"]
 [ext_resource type="Script" path="res://play_button.gd" id="3_kvduo"]
+[ext_resource type="Script" path="res://quit_button.gd" id="4_cosu3"]
 
 [sub_resource type="Theme" id="Theme_7jl5p"]
 
@@ -67,6 +68,8 @@ anchor_bottom = 1.0
 offset_top = 500.0
 offset_right = -0.00500107
 offset_bottom = 500.985
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 
 [node name="play_bold" type="RichTextLabel" parent="Play Button"]
@@ -94,14 +97,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -0.00500262
 offset_bottom = 0.984998
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 
-[node name="quit" type="RichTextLabel" parent="."]
+[node name="Quit Button" type="Area2D" parent="."]
+script = ExtResource("4_cosu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit Button"]
+position = Vector2(142.75, 980)
+shape = SubResource("RectangleShape2D_ny7oj")
+
+[node name="quit" type="RichTextLabel" parent="Quit Button"]
 modulate = Color(0, 0, 1, 1)
 offset_left = 50.0
-offset_top = 873.0
+offset_top = 864.0
 offset_right = 95.0
-offset_bottom = 918.0
+offset_bottom = 909.0
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -113,14 +125,48 @@ text = "
 fit_content = true
 tab_size = 24
 
-[node name="MarginContainer" type="MarginContainer" parent="quit"]
+[node name="MarginContainer" type="MarginContainer" parent="Quit Button/quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 500.0
+offset_right = -0.00500107
+offset_bottom = 500.985
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="quit_bold" type="RichTextLabel" parent="Quit Button"]
+modulate = Color(0, 0, 1, 1)
+offset_left = 50.0
+offset_top = 864.0
+offset_right = 95.0
+offset_bottom = 909.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_7jl5p")
+theme_override_fonts/normal_font = SubResource("SystemFont_2j58o")
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "
+[b][wave amp=50 freq=0.5]quit[/wave][/b]"
+fit_content = true
+tab_size = 24
+
+[node name="MarginContainer" type="MarginContainer" parent="Quit Button/quit_bold"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -0.00500262
-offset_bottom = 0.264999
+offset_bottom = 0.984998
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 
 [connection signal="mouse_entered" from="Play Button" to="Play Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play Button" to="Play Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Quit Button" to="Quit Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Quit Button" to="Quit Button" method="_on_mouse_exited"]
