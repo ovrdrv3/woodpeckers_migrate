@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b80jtxs8ank2"]
+[gd_scene load_steps=3 format=3 uid="uid://b80jtxs8ank2"]
 
-[ext_resource type="Texture2D" uid="uid://sbwc23pwrhbt" path="res://icon.svg" id="1_psp5l"]
+[ext_resource type="PackedScene" uid="uid://bv4o0nn20avc1" path="res://player.tscn" id="2_0ovvw"]
+[ext_resource type="Texture2D" uid="uid://ba1jedgdsjsw8" path="res://spikes.png" id="2_m87w7"]
 
 [node name="world" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(801.5, 401)
-scale = Vector2(1.19531, 0.71875)
-texture = ExtResource("1_psp5l")
+[node name="Spikes" type="Sprite2D" parent="."]
+position = Vector2(1076, 392)
+texture = ExtResource("2_m87w7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="player" parent="." instance=ExtResource("2_0ovvw")]
+position = Vector2(432, 460)
