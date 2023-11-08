@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv4o0nn20avc1"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_2dpgf"]
+[ext_resource type="Texture2D" uid="uid://lc7fyddl1kao" path="res://woodpecker_dalle_temp_asset.png" id="2_tvfyq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6ruu"]
+radius = 43.679
+height = 172.733
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_2dpgf")
+
+[node name="WoodpeckerDalleTempAsset" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(0.185547, 0.185547)
+texture = ExtResource("2_tvfyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(89, 114)
+rotation = 1.15282
+shape = SubResource("CapsuleShape2D_b6ruu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
